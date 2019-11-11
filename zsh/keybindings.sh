@@ -10,18 +10,20 @@
 	function git_prepare() {
 		if [ -n "$BUFFER" ];
 			then
-				BUFFER="git add -A && git commit -m \"$BUFFER\" && git push"
-		fi
-
-		if [ -z "$BUFFER" ];
-			then
-				BUFFER="git add -A && git commit -v && git push"
+				BUFFER="git commit -am \"$BUFFER\""
 		fi
 				
 		zle accept-line
 	}
 	zle -N git_prepare
 	bindkey "^g" git_prepare
+
+	function git_checkout(){
+		BUFFER="git checkout master"
+		zle accept-line
+	}
+	zle -N git_checkout
+	bindkey "^q" git_checkout
 
 # Edit and rerun
 	function edit_and_run() {
