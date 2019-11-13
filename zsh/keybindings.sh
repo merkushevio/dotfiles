@@ -19,11 +19,11 @@
 	bindkey "^g" git_prepare
 
 	function git_checkout(){
-		BUFFER="git checkout master"
+		BUFFER="git checkout master && git pull"
 		zle accept-line
 	}
 	zle -N git_checkout
-	bindkey "^q" git_checkout
+	bindkey "^p" git_checkout
 
 # Edit and rerun
 	function edit_and_run() {
