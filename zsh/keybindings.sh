@@ -23,7 +23,7 @@
 		zle accept-line
 	}
 	zle -N git_checkout
-	bindkey "^," git_checkout
+	bindkey "^q" git_checkout
 
 # Edit and rerun
 	function edit_and_run() {
