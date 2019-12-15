@@ -6,9 +6,8 @@ prompt_install() {
 	stty $old_stty_cfg && echo
 	if echo "$answer" | grep -iq "^y" ;then
 		# This could def use community support
-		BATTERY_FILE = '/usr/local/bin/battery'
-		if [ $1 == 'battery' && -f "$BATTERY_FILE" ]; then
-    			curl -O https://raw.githubusercontent.com/goles/battery/master/battery
+		if [ $1 = "battery" ] && [ ! -f "/usr/local/bin/battery" ]; then
+			curl -O https://raw.githubusercontent.com/goles/battery/master/battery
 			sudo mv battery /usr/local/bin
 			sudo chmod u+x /usr/local/bin/battery
 
