@@ -6,10 +6,10 @@ prompt_install() {
 	stty $old_stty_cfg && echo
 	if echo "$answer" | grep -iq "^y" ;then
 		# This could def use community support
-		if [ $1 = "battery" ] && [ ! -f "/usr/local/bin/battery" ]; then
-			curl -O https://raw.githubusercontent.com/goles/battery/master/battery
-			sudo mv battery /usr/local/bin
-			sudo chmod u+x /usr/local/bin/battery
+		#if [ $1 = "battery" ] && [ ! -f "/usr/local/bin/battery" ]; then
+		#	curl -O https://raw.githubusercontent.com/goles/battery/master/battery
+		#	sudo mv battery /usr/local/bin
+		#	sudo chmod u+x /usr/local/bin/battery
 
 		elif [ -x "$(command -v apt-get)" ]; then
 			sudo apt-get install $1 -y
@@ -75,8 +75,8 @@ else
 fi
 
 git submodule update --init --recursive
-check_for_software battery
-echo
+#check_for_software battery
+#echo
 check_for_software zsh
 echo 
 check_for_software vim
