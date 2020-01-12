@@ -11,6 +11,9 @@ prompt_install() {
 		#	sudo mv battery /usr/local/bin
 		#	sudo chmod u+x /usr/local/bin/battery
 
+		elif [ $1 = 'vim' ] && [ ! -f "~/dotfiles/vim/bundle/Vundle.vim" ]; then
+			git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+
 		elif [ -x "$(command -v apt-get)" ]; then
 			sudo apt-get install $1 -y
 
