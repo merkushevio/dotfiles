@@ -94,16 +94,15 @@
 " Fix for: https://github.com/fatih/vim-go/issues/1509
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
-call vundle#begin('~/dotfiles/vim/plugin')
+" set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+" call vundle#begin('~/dotfiles/vim/plugin')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///~/dotfiles/vim/plugin'
-
-Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'file:///~/dotfiles/vim/plugin'
+" Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+" call vundle#end()            " required
 filetype plugin indent on    " required

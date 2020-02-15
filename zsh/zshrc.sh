@@ -8,6 +8,7 @@
 
 # Aliases
 	alias v="vim -p"
+	alias vim="vim -u ~/dotfiles/vim/vimrc.vim"
 	alias ll="ls -al"
 	mkdir -p /tmp/log
 	alias lzd="lazydocker"
