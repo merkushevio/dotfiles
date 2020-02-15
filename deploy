@@ -6,10 +6,10 @@ prompt_install() {
 	stty $old_stty_cfg && echo
 	if echo "$answer" | grep -iq "^y" ;then
 		# This could def use community support
-		#if [ $1 = "battery" ] && [ ! -f "/usr/local/bin/battery" ]; then
-		#	curl -O https://raw.githubusercontent.com/goles/battery/master/battery
-		#	sudo mv battery /usr/local/bin
-		#	sudo chmod u+x /usr/local/bin/battery
+		if [ $1 = "battery" ] && [ ! -f "/usr/local/bin/battery" ]; then
+			curl -O https://raw.githubusercontent.com/goles/battery/master/battery
+			sudo mv battery /usr/local/bin
+			sudo chmod u+x /usr/local/bin/battery
 
 		elif [ $1 = 'vim' ] && [ ! -f "~/dotfiles/vim/bundle/Vundle.vim" ]; then
 			git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
