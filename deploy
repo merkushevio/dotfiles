@@ -10,6 +10,9 @@ prompt_install() {
 			curl -O https://raw.githubusercontent.com/goles/battery/master/battery
 			sudo mv battery /usr/local/bin
 			sudo chmod u+x /usr/local/bin/battery
+		
+		elif [ $1 = "lazydocker" ] && [ ! -f "/usr/local/bin/lazydocker" ]; then
+			curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 		elif [ $1 = 'vim' ] && [ ! -f "~/dotfiles/vim/bundle/Vundle.vim" ]; then
 			git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
@@ -78,8 +81,10 @@ else
 fi
 
 git submodule update --init --recursive
-#check_for_software battery
-#echo
+check_for_software battery
+echo
+check_for_software lazydocker
+echo
 check_for_software zsh
 echo 
 check_for_software vim
