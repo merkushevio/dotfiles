@@ -19,6 +19,8 @@
 	export VISUAL=vim
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
+source <(stern --completion=zsh)
+source <(kubectl completion zsh)
 
 #Functions
 	# Loop a command and show the output in vim
