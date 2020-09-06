@@ -26,6 +26,9 @@ prompt_install() {
 		elif [ -x "$(command -v pkg)" ]; then
 			sudo pkg install $1
 
+		elif [ -x "$(command -v dnf)" ]; then
+			sudo dnf install $1
+
 		elif [ -x "$(command -v pacman)" ]; then
 			sudo pacman -S $1
 
