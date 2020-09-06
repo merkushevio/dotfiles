@@ -20,6 +20,9 @@
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
 source <(stern --completion=zsh)
+
+# K8s auto-complete
+autoload -U +X compinit && compinit
 source <(kubectl completion zsh)
 
 #Functions
